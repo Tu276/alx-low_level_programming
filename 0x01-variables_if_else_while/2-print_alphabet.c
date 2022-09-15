@@ -7,12 +7,12 @@
   * Return: 0
   */
 
-int main() {
-    // Write C code here
-    for (char c = 'a'; c <= 'z'; ++c)
+int main(void)
+{
+	for (char c = 'a'; c <= 'z'; ++c)
 
-    putchar (c);
-    putchar ('\n')
+		putchar (c);
+	putchar ('\n');
 
-    return 0;
+	return (0);
 }
