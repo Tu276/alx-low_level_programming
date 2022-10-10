@@ -2,19 +2,20 @@
 #include <stdlib.h>
 
 /**
-  * main - main
-  * prints lowercase alphabet followed by a newline
-  * Return: 0
-  */
+ * main - main
+ * prints lowercase alphabet followed by a newline
+ * Return: 0
+ */
 
 int main(void)
 {
-	while (c <= ''z')
+	int c = 'a';
+	while (c <= 'z')
 	{
-	putchar (c);
-	c++;
+		putchar(c);
+		c++;
 	}
-	putchar ('\n');
+	putchar('\n');
 
 	return (0);
 }
