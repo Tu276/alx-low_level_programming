@@ -1,20 +1,34 @@
+# Compiler to use
 CC = gcc
+
+# Source files
 SRC = main.c school.c
+
+# Object files
 OBJ = $(SRC:.c=.o)
+
+# Name of the executable
 NAME = school
+
+# Compiler flags
 CFLAGS = -Wall -Werror -Wextra -pedantic
 
+# Default target
 all: m.h $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
 
+# Clean object files and editor backup files
 .PHONY: clean oclean fclean re
 
 clean:
 	$(RM) *~ *.swp $(NAME)
 
+# Clean object files
 oclean:
 	$(RM) $(OBJ)
 
+# Clean object files and editor backup files
 fclean: clean oclean
 
+# Clean object files and editor backup files, then build
 re: fclean all
