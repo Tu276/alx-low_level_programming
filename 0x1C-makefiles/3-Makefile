@@ -1,18 +1,25 @@
 CC = gcc
-SRC = main.c school.c
+SRC = $(wildcard *.c)
 OBJ = $(SRC:.c=.o)
 NAME = school
 RM = rm -f
 
-all : $(OBJ)
-	$(CC) $(OBJ) -o $(NAME)
+all: $(NAME)
 
-clean :
-	$(RM) *~ $(NAME)
+$(NAME): $(OBJ)
+	$(CC) -o $@ $^
 
-oclean :
+%.o: %.c
+	$(CC) -c $< -o $@
+
+clean:
+	$(RM) *~ \#*\# $(NAME)
+
+oclean:
 	$(RM) $(OBJ)
 
-fclean : clean oclean
+fclean: clean oclean
 
-re : oclean all
+re: fclean all
+
+.PHONY: all clean oclean fclean re
