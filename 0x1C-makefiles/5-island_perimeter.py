@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""This module returns the perimeter of the island decribed by grid"""
+"""This module returns the perimeter of the island described by grid"""
 
 
 def island_perimeter(grid):
@@ -16,16 +16,26 @@ def island_perimeter(grid):
 
 
 def get_surrounding_water(grid, i, j):
-    """Returns the number of sides surrounded by water"""
+    """
+    Returns the number of sides surrounded by water.
+
+    Args:
+    - grid: a list of lists of integers representing a grid
+    - i: an integer representing the row index
+    - j: an integer representing the column index
+
+    Returns:
+    - an integer representing the number of sides surrounded by water
+    """
     water_sides = 0
 
-    if grid[i][j + 1] == 0 or j >= len(grid[i]) - 1:
+    if j == len(grid[i]) - 1 or grid[i][j + 1] == 0:
         water_sides += 1
-    if grid[i - 1][j] == 0 or i <= 0:
+    if i == 0 or grid[i - 1][j] == 0:
         water_sides += 1
-    if grid[i][j - 1] == 0 or j <= 0:
+    if j == 0 or grid[i][j - 1] == 0:
         water_sides += 1
-    if grid[i + 1][j] == 0 or i >= len(grid) - 1:
+    if i == len(grid) - 1 or grid[i + 1][j] == 0:
         water_sides += 1
 
     return water_sides
